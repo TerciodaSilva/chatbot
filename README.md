@@ -7,11 +7,11 @@ Esse trabalho está vinculado ao projeto de pesquisa em parceria da CONTEL com a
 # Como instalar
 > Faça o clone desse projeto.
 ```sh
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+$ git clone https://github.com/TerciodaSilva/chatbot.git
 ```
 > Entre no diretório do projeto.
 ```sh
-$ cd <PROJECT>
+$ cd chatbot
 ```
 > Crie um novo ambiente virtual escolhendo um interpretador Python e criando um diretório .\\venv para mantê-lo:
 ```sh
