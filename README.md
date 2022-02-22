@@ -7,23 +7,23 @@ Esse trabalho está vinculado ao projeto de pesquisa em parceria da CONTEL com a
 # Como instalar
 > Faça o clone desse projeto.
 ```sh
-$ git clone https://github.com/TerciodaSilva/chatbot.git
+git clone https://github.com/TerciodaSilva/chatbot.git
 ```
 > Entre no diretório do projeto.
 ```sh
-$ cd chatbot
+cd chatbot
 ```
 > Crie um novo ambiente virtual escolhendo um interpretador Python e criando um diretório .\\venv para mantê-lo:
 ```sh
-$ python3 -m venv ./venv
+python3 -m venv ./venv
 ```
 >Ative o ambiente virtual:
 ```sh
-$ .\venv\Scripts\activate
+.\venv\Scripts\activate
 ```
 >Instale o Rasa Open Source usando pip (requer Python 3.7 ou 3.8).
 ```sh
-$ pip3 install -U --user pip && pip3 install rasa
+pip3 install -U --user pip && pip3 install rasa
 ```
 
 ### Mais informações
