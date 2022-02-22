@@ -1,0 +1,72 @@
+{
+  "nome": {
+    "0": "Olá, eu sou o assistente virtual da Contel, qual o seu primeiro nome?",
+    "1": "Por favor, informe apenas o primeiro nome.",
+    "2": "Você pode informar o seu primeiro nome, por favor."
+  },
+  "ident": {
+    "0": "Para iniciar a ativação, informe o seu CPF ou CNPJ.",
+    "1": "Para prosseguir com a ativação preciso que você informe o seu CPF ou CNPJ.",
+    "2": "Você pode informar o seu CPF ou CNPJ, por favor."
+  },
+  "DDD": {
+    "0": "Informe o DDD do seu número. O DDD são os 2 primeiros dígitos da localidade do telefone, por exemplo: (51) número do seu telefone.",
+    "1": "Por favor, informe apenas os 2 números do DDD",
+    "2": "Você pode informar o seu DDD, por favor."
+  },
+  "codigo_barras": {
+    "0": "Agora informe o código de barras do chip, é o número de 19 dígitos que inicia com 8955.",
+    "1": "O código de barras é um número que contém 19 dígitos e inicia com 8955, preciso dele para realizar a ativação.",
+    "2": "Você pode informar o código de barras do seu chip, por favor. São 19 dígitos que iniciam com 8955."
+  },
+  "CEP": {
+    "0": "Qual é o CEP ?",
+    "1": "Por favor, informe o seu CEP.",
+    "2": "Você pode informar o seu CEP, por favor. Ele é um número de 8 digítos no formato de xxxxx-xxx."
+  },
+  "nome_rua": {
+    "0": "Qual é o nome da rua?",
+    "1": "Por favor, informe o nome da sua rua.",
+    "2": "Você pode informar o nome da sua rua, por favor."
+  },
+  "numero_endereco": {
+    "0": "E qual é o número do endereço?",
+    "1": "Por favor, infome o número do seu endereço.",
+    "2": "Você pode informar o número do seu endereço, por favor."
+  },
+  "valor_complemento": {
+    "0": "Informe o complemento.",
+    "1": "Por favor, informe o complemento do seu endereço.",
+    "2": "Para prosseguir, informe o complemento do seu endereço."
+  },
+  "bairro_endereco": {
+    "0": "Qual é o bairro deste endereço?",
+    "1": "Por favor, informe o endereço do seu bairro.",
+    "2": "Para prosseguir, informe o endereço do seu bairro."
+  },
+  "numero_celular": {
+    "0": "Por favor, informe um telefone para contato.",
+    "1": "Informe um telefone válido para contato.",
+    "2": "Para prosseguir, informe um telefone para contato."
+  },
+  "nascimento": {
+    "0": "Informe a data do seu nascimento no seguinte formato xx/xx/xxxx.",
+    "1": "Por favor, a data do seu nascimento no seguinte formato xx/xx/xxxx.",
+    "2": "Você pode informar a data do seu nascimento no seguinte formato dia/mês/ano."
+  },
+  "razao_social": {
+    "0": "Informe a razão social da sua empresa.",
+    "1": "Por favor, informe a razão social correspondente a sua empresa.",
+    "2": "Para prosseguir, informe a razão social da sua empresa."
+  },
+  "nomeCompleto": {
+    "0": "Agora informe seu nome completo",
+    "1": "Por favor, digíte seu nome completo.",
+    "2": "Você pode informar o seu nome completo, por favor."
+  },
+  "valor_email": {
+    "0": "Informe o seu e-mail.",
+    "1": "Por favor, informe o seu e-mail.",
+    "2": "Você pode informar o seu e-mail, por favor."
+  }
+}

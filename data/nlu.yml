@@ -1,0 +1,52 @@
+###############################################################
+# Programa: Assistente para realizar a ativação do chip
+# Autor: Tércio da Silva
+# Criado em: setembro/2020 - fevereiro/2022
+# Licença: mesma do Rasa
+# Arquivo: nlu.yml - dicionário de intenções e sinônimos
+# Nesse arquivo é onde cria as inteções, bem como as palavras que você irá usar para treiná-las.
+###############################################################
+
+version: "3.0"
+
+nlu:
+- intent: saudacao
+  examples: |
+    - /start
+    - oi
+    - oii
+    - olá
+    - bom dia
+    - boa tarde
+    - boa noite
+
+- intent: agradecimento
+  examples: |
+    - obrigado
+    - valeu
+    - ok
+    - muito obrigado
+    - obg
+    - thanks
+
+- intent: affirm
+  examples: |
+    - sim
+    - afirmativo
+    - top
+
+- intent: deny
+  examples: |
+    - não
+    - nao
+    - negativo
+
+- intent: atendente_humano
+  examples: |
+    - atendente
+    - humano
+    - quero falar com um humano
+
+- intent: email
+  examples: |
+    - dfsfjn2133@gmail.com

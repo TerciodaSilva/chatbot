@@ -1,0 +1,63 @@
+# README
+![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
+Documentação de instalação do chatbot CONTEL.
+
+Esse trabalho está vinculado ao projeto de pesquisa em parceria da CONTEL com a UNISC que tem como propósito o desenvolvimento de um piloto de chatbot para atendimento ao cliente, no processo que envolva ativação de chip.
+
+# Como instalar
+> Faça o clone desse projeto.
+```sh
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+> Entre no diretório do projeto.
+```sh
+$ cd <PROJECT>
+```
+> Crie um novo ambiente virtual escolhendo um interpretador Python e criando um diretório .\\venv para mantê-lo:
+```sh
+$ python3 -m venv ./venv
+```
+>Ative o ambiente virtual:
+```sh
+$ .\venv\Scripts\activate
+```
+>Instale o Rasa Open Source usando pip (requer Python 3.7 ou 3.8).
+```sh
+$ pip3 install -U --user pip && pip3 install rasa
+```
+
+### Mais informações
+| recurso | link |
+|---------|------|
+| rasa | https://rasa.com/docs/rasa/installation/
+
+### 🛠 Tecnologias
+ As seguintes ferramentas foram utilizadas no construção do projeto.
+- [python](https://www.python.org/)
+- [rasa](https://rasa.com/)
+
+# Como usar o chatbot
+Para usar o chatbot é necessário que todos os passos anteriores de instalção tenham sido realizados.
+> Primeiro é necessário executar a parte lógica do chatbot.
+```sh
+rasa run actions
+```
+> Depois em um segundo terminal é necessário realizar o treinamento do modelo da IA.
+```sh
+rasa train
+```
+> Para testar o chatbot no terminal.
+```sh
+rasa shell
+```
+> Para rodar o chatbot em um canal de chat, mas antes não esqueça de configurar o arquivo credentials.yml.
+```sh
+rasa run
+``` 
+
+
+
+# Licença
+> MIT
+
+Made with 🧡 by Tércio da Silva 🖐 [See my LinkedIn](https://www.linkedin.com/in/t%C3%A9rcio-da-silva-a5b385197/)

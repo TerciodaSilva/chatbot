@@ -1,0 +1,398 @@
+###############################################################
+# Programa: Assistente para realizar a ativação do chip
+# Autor: Tércio da Silva
+# Criado em: setembro/2020 - fevereiro/2022
+# Licença: mesma do Rasa
+# Arquivo: domain.yml - configuração das estórias do bot
+# Nesse arquivo é declarado todos os recursos que são usados como, actions,
+# intents, entities, slots, forms, responses entre outros.
+###############################################################
+
+version: "3.0"
+
+########## ACTIONS
+actions:
+  - validate_pedir_dados
+  - action_nome
+  - action_ident
+  - action_nomeCompleto
+  - action_nascimento
+  - action_DDD
+  - action_numero_celular
+  - action_bairro_endereco
+  - action_numero_endereco
+  - action_nome_rua
+  - action_CEP
+  - action_codigo_barras
+  - action_valor_complemento
+  - action_valor_email
+  - action_link
+  - action_agradecimento
+  - action_plano
+  - action_ask_plano
+  - action_cadastrar_cliente
+  - action_ask_nome
+  - action_ask_ident
+  - action_ask_nomeCompleto
+  - action_ask_DDD
+  - action_ask_codigo_barras
+  - action_ask_CEP
+  - action_ask_nome_rua
+  - action_ask_numero_endereco
+  - action_ask_valor_complemento
+  - action_ask_bairro_endereco
+  - action_ask_numero_celular
+  - action_ask_nascimento
+  - action_ask_razao_social
+  - action_ask_valor_email
+  - action_direcionado_atendente_humano
+  - action_limpar_historico
+
+########## INTENÇÕES
+intents:
+  - saudacao
+  - affirm
+  - deny
+  - atendente_humano
+  - agradecimento
+  - email
+
+########## SLOTS
+slots:
+# primeiro nome do usuário
+  nome:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      action: action_nome
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: nome
+
+# flag para continuar ou parar o formulário
+  continue:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: custom
+
+# contador de repetição dos slots
+  repeticao:
+    type: float
+    initial_value: 0
+    mappings:
+    - type: custom
+
+# nome completo do usuário
+  nomeCompleto:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      action: action_nomeCompleto
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: nomeCompleto
+
+# razão social da empresa
+  razao_social:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      action: action_razao_social
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: razao_social
+
+# código de barras do chip do usuário
+  codigo_barras:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      action: action_codigo_barras
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: codigo_barras
+
+# CEP do usuário
+  CEP:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      action: action_CEP
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: CEP
+
+# nome da rua do usuário
+  nome_rua:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      action: action_nome_rua
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: nome_rua
+
+# número do endereço do usuário
+  numero_endereco:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      action: action_numero_endereco
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: numero_endereco
+
+# bairro do usuário
+  bairro_endereco:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      action: action_bairro_endereco
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: bairro_endereco
+
+# numero do celular do usuário
+  numero_celular:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      action: action_numero_celular
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: numero_celular
+
+# identificação do usuário
+  ident:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      action: action_ident
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: ident
+
+# DDD do usuário
+  DDD:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      action: action_DDD
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: DDD
+
+# data de nascimento do usuário
+  nascimento:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      action: action_nascimento
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: nascimento
+
+# flag para pedir o complemento
+  complemento:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_intent
+      value: True
+      intent: affirm
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: complemento
+    - type: from_intent
+      value: False
+      intent: deny
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: complemento
+
+# complemento informado pelo usuário
+  valor_complemento:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      action: action_valor_complemento
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: valor_complemento
+
+# plano escolhido pelo usuário
+  plano:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      action: action_plano
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: plano
+
+# flag para pedir o e-mail
+  email:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_intent
+      value: True
+      intent: affirm
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: email
+    - type: from_intent
+      value: False
+      intent: deny
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: email
+
+# e-mail informando pelo usuário
+  valor_email:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      action: action_valor_email
+      not_intent: atendente_humano
+      conditions:
+      - active_loop: pedir_dados
+        requested_slot: valor_email
+
+########## FORMS
+forms:
+  pedir_dados:
+    required_slots:
+      - nome
+      - ident
+      - DDD
+      - codigo_barras
+      - CEP
+      - nome_rua
+      - numero_endereco
+      - complemento
+      - bairro_endereco
+      - email
+      - numero_celular
+      - plano
+
+########## RESPONSES
+responses:
+  utter_nome:
+  - text: "Oi {nome}. Agora vou realizar o seu cadastro e gerar o link de ativação do seu novo chip Contel."
+
+  utter_vantagens:
+  - text: |
+      Ah, enquanto faço isso, quero apresentar para você algumas vantagens do chip Contel:
+      1. Maior cobertura 4G em todo Brasil.
+      2. Internet acumulada, o que você não gastar acumula para o mês seguinte.
+      3. O WhatsApp não desconta da sua franquia.
+      4. Planos sem fidelidade ou multa.
+      5. Seus dados livre de consultas no SPC/SERASA.
+      Se desejar falar com um atendente humano em qualquer momento, digite a palavra “Humano”.
+
+  utter_ask_complemento:
+  - text: Possui complemento?
+    buttons:
+    - title: "SIM"
+      payload: "/affirm"
+    - title: "NÃO"
+      payload: "/deny"
+  - text: Possui complemento? SIM ou NÃO
+    channel: "twilio"
+
+  utter_ask_email:
+  - text: Deseja informar um e-mail?
+    buttons:
+    - title: "SIM"
+      payload: "/affirm"
+    - title: "NÃO"
+      payload: "/deny"
+  - text: Deseja informar um e-mail? SIM ou NÃO
+    channel: "twilio"
+
+  utter_plano:
+  - text: | 
+      1 - plano 3GB + 100 min. Ligações para todo o Brasil – R$ 39,90
+      2 - plano 5GB + Ligações ilimitadas para todo o Brasil – R$ 49,90
+      3 - plano 7GB + Ligações ilimitadas para todo o Brasil – R$ 59,90
+      4 - plano 15GB + Ligações ilimitadas para todo o Brasil – R$ 79,90
+    buttons:
+    - title: "3GB"
+      payload: "1"
+    - title: "5GB"
+      payload: "2"
+    - title: "7GB"
+      payload: "3"
+    - title: "15GB"
+      payload: "4"
+  - text: | 
+      1 - plano 3GB + 100 min. Ligações para todo o Brasil – R$ 39,90
+      2 - plano 5GB + Ligações ilimitadas para todo o Brasil – R$ 49,90
+      3 - plano 7GB + Ligações ilimitadas para todo o Brasil – R$ 59,90
+      4 - plano 15GB + Ligações ilimitadas para todo o Brasil – R$ 79,90 
+      
+      Responda com o número correspondente ao plano desejado
+    channel: "twilio"
+
+  utter_lembrete:
+  - text: |
+      Lembro que o pagamento pode ser feito via:
+      ✅ PIX
+      ✅ Cartão de Crédito
+      ✅ Boleto bancário - compensação em até 1 dia.
+
+  utter_dicas:
+  - text: |
+      ✅ O número da linha é gerado automaticamente pelo sistema após compensação de pagamento;
+      ✅ Você receberá um SMS informando o seu novo número ativo;
+      ✅ Você pode salvar o nosso 0800 em sua agenda do celular para nos chamar no WhatsApp sempre que precisar;
+      ✅ Após a ativação, indicamos usar o chip no SIM 1 (entrada um) do telefone caso haja mais de uma entrada;
+      ✅ Se após 1 hora você tiver alguma dificuldade com ligação ou internet, nos retorne que passaremos uma configuração para resolver, pois isso pode acontecer em alguns aparelhos.
+
+  utter_please_rephrase:
+  - text: "Desculpe, poderia reformular sua frase."
+
+  utter_agradecer:
+  - text: "Fico feliz em poder ajudar!"
+
+########## SESSION CONFIG
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+##################### FIM DE ARQUIVO #####################

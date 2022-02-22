@@ -1,0 +1,20 @@
+###############################################################
+# Programa: Assistente para realizar a ativação do chip
+# Autor: Tércio da Silva
+# Criado em: setembro/2020 - fevereiro/2022
+# Licença: mesma do Rasa
+# Arquivo: stories.yml - roteiro com a história dos diálogos
+# Nesse arquivo se cria as possíveis direções que a conversa pode tomar.
+###############################################################
+
+version: "3.0"
+
+stories:
+
+- story: Ativação Chip
+# início da ativação do chip
+  steps:
+    - intent: saudacao
+    - action: pedir_dados
+    - active_loop: pedir_dados
+
