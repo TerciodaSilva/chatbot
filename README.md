@@ -54,7 +54,11 @@ rasa shell
 ```sh
 rasa run
 ``` 
-
+> Esse chatbot usa como teste para canais de chat o ngrok, você pode baixá-lo [AQUI](https://ngrok.com/download).
+> Para criar um túnel HTTP use o comando
+```sh
+ngrok http 5005
+```
 
 
 # Licença
