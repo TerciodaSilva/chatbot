@@ -56,6 +56,7 @@ intents:
   - atendente_humano
   - agradecimento
   - email
+  - adeus
 
 ########## SLOTS
 slots:
@@ -318,12 +319,12 @@ responses:
   utter_vantagens:
   - text: |
       Ah, enquanto faço isso, quero apresentar para você algumas vantagens do chip Contel:
-      1. Maior cobertura 4G em todo Brasil.
-      2. Internet acumulada, o que você não gastar acumula para o mês seguinte.
-      3. O WhatsApp não desconta da sua franquia.
-      4. Planos sem fidelidade ou multa.
-      5. Seus dados livre de consultas no SPC/SERASA.
-      Se desejar falar com um atendente humano em qualquer momento, digite a palavra “Humano”.
+      ✅ Maior cobertura 4G em todo Brasil.
+      ✅ Internet acumulada, o que você não gastar acumula para o mês seguinte.
+      ✅ O WhatsApp não desconta da sua franquia.
+      ✅ Planos sem fidelidade ou multa.
+      ✅ Seus dados livre de consultas no SPC/SERASA.
+      Se desejar falar com um atendente, digite a palavra “Humano”.
 
   utter_ask_complemento:
   - text: Possui complemento?
@@ -347,10 +348,11 @@ responses:
 
   utter_plano:
   - text: | 
-      1 - plano 3GB + 100 min. Ligações para todo o Brasil – R$ 39,90
-      2 - plano 5GB + Ligações ilimitadas para todo o Brasil – R$ 49,90
-      3 - plano 7GB + Ligações ilimitadas para todo o Brasil – R$ 59,90
-      4 - plano 15GB + Ligações ilimitadas para todo o Brasil – R$ 79,90
+      Plano 3GB + 100min. de ligações ➡ R$39,90.
+      Plano 5GB + Ligações ilimitadas ➡ R$ 49,90.
+      Plano 7GB + Ligações ilimitadas ➡ R$ 59,90.
+      Plano 15GB + Ligações ilimitadas ➡ R$ 79,90.
+      Ligações para todo o Brasil.
     buttons:
     - title: "3GB"
       payload: "1"
@@ -361,28 +363,32 @@ responses:
     - title: "15GB"
       payload: "4"
   - text: | 
-      1 - plano 3GB + 100 min. Ligações para todo o Brasil – R$ 39,90
-      2 - plano 5GB + Ligações ilimitadas para todo o Brasil – R$ 49,90
-      3 - plano 7GB + Ligações ilimitadas para todo o Brasil – R$ 59,90
-      4 - plano 15GB + Ligações ilimitadas para todo o Brasil – R$ 79,90 
+      1️⃣ - Plano 3GB + 100min. de ligações ➡ R$39,90.
+      2️⃣ - Plano 5GB + Ligações ilimitadas ➡ R$ 49,90.
+      3️⃣ - Plano 7GB + Ligações ilimitadas ➡ R$ 59,90.
+      4️⃣ - Plano 15GB + Ligações ilimitadas ➡ R$ 79,90.
+      Ligações para todo o Brasil. 
       
-      Responda com o número correspondente ao plano desejado
+      Responda com o número correspondente ao plano desejado.
     channel: "twilio"
 
   utter_lembrete:
   - text: |
       Lembro que o pagamento pode ser feito via:
-      ✅ PIX
-      ✅ Cartão de Crédito
+      ✅ PIX.
+      ✅ Cartão de Crédito.
       ✅ Boleto bancário - compensação em até 1 dia.
 
   utter_dicas:
   - text: |
-      ✅ O número da linha é gerado automaticamente pelo sistema após compensação de pagamento;
-      ✅ Você receberá um SMS informando o seu novo número ativo;
-      ✅ Você pode salvar o nosso 0800 em sua agenda do celular para nos chamar no WhatsApp sempre que precisar;
-      ✅ Após a ativação, indicamos usar o chip no SIM 1 (entrada um) do telefone caso haja mais de uma entrada;
+      ✅ O número da linha é gerado automaticamente pelo sistema após compensação de pagamento.
+      ✅ Você receberá um SMS informando o seu novo número ativo.
+      ✅ Você pode salvar o nosso 0800 em sua agenda do celular para nos chamar no WhatsApp sempre que precisar.
+      ✅ Após a ativação, indicamos usar o chip no SIM 1 (entrada um) do telefone caso haja mais de uma entrada.
       ✅ Se após 1 hora você tiver alguma dificuldade com ligação ou internet, nos retorne que passaremos uma configuração para resolver, pois isso pode acontecer em alguns aparelhos.
+
+  utter_adeus:
+  - text: "Até mais!"
 
   utter_please_rephrase:
   - text: "Desculpe, poderia reformular sua frase."

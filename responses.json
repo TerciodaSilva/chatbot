@@ -10,17 +10,17 @@
     "2": "Você pode informar o seu CPF ou CNPJ, por favor."
   },
   "DDD": {
-    "0": "Informe o DDD do seu número. O DDD são os 2 primeiros dígitos da localidade do telefone, por exemplo: (51) número do seu telefone.",
-    "1": "Por favor, informe apenas os 2 números do DDD",
+    "0": "Informe o DDD (os 2 primeiros dígitos da localidade do telefone, exemplo: 51).",
+    "1": "Por favor, informe apenas os 2 números do DDD.",
     "2": "Você pode informar o seu DDD, por favor."
   },
   "codigo_barras": {
-    "0": "Agora informe o código de barras do chip, é o número de 19 dígitos que inicia com 8955.",
+    "0": "Por favor, informe o código de barras do chip, é o número de 19 dígitos que inicia com 8955.",
     "1": "O código de barras é um número que contém 19 dígitos e inicia com 8955, preciso dele para realizar a ativação.",
     "2": "Você pode informar o código de barras do seu chip, por favor. São 19 dígitos que iniciam com 8955."
   },
   "CEP": {
-    "0": "Qual é o CEP ?",
+    "0": "Qual é o CEP?",
     "1": "Por favor, informe o seu CEP.",
     "2": "Você pode informar o seu CEP, por favor. Ele é um número de 8 digítos no formato de xxxxx-xxx."
   },
@@ -50,8 +50,8 @@
     "2": "Para prosseguir, informe um telefone para contato."
   },
   "nascimento": {
-    "0": "Informe a data do seu nascimento no seguinte formato xx/xx/xxxx.",
-    "1": "Por favor, a data do seu nascimento no seguinte formato xx/xx/xxxx.",
+    "0": "Informe a data do seu nascimento no seguinte formato dia/mês/ano.",
+    "1": "Por favor, a data do seu nascimento no seguinte formato dia/mês/ano.",
     "2": "Você pode informar a data do seu nascimento no seguinte formato dia/mês/ano."
   },
   "razao_social": {
@@ -60,7 +60,7 @@
     "2": "Para prosseguir, informe a razão social da sua empresa."
   },
   "nomeCompleto": {
-    "0": "Agora informe seu nome completo",
+    "0": "Agora informe seu nome completo.",
     "1": "Por favor, digíte seu nome completo.",
     "2": "Você pode informar o seu nome completo, por favor."
   },

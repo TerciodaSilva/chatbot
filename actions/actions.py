@@ -1,3 +1,4 @@
+import time
 from typing import Text, List, Any, Dict, Union, Optional
 from rasa_sdk import Tracker, FormValidationAction, Action
 from rasa_sdk.executor import CollectingDispatcher
@@ -180,7 +181,7 @@ class ActionAtendenteHumano(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         send_messages = [
-            'Redirecionando para um atendente, aguarde um momento!',
+            'Clique no link abaixo para falar com um atendente!',
             'https://cutt.ly//EPgLOVt'
         ]
 
@@ -405,7 +406,7 @@ class ActionAgradecimento(Action):
         hora = datetime.datetime.now().hour  # captura horário atual.
 
         send_messages = [
-            'Caso tenha alguma dúvida nos contate através do link à seguir',
+            'Caso tenha alguma dúvida nos contate através do link à seguir:',
             'https://cutt.ly//EPgLOVt'
         ]
 
@@ -433,7 +434,7 @@ class ActionAskPlano(Action):
             tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # informações que serão enviadas para o usuário.
         send_message = [
-            {'text': 'Pronto! Agora só falta escolher o plano. Escolha uma das opções a seguir'},
+            {'text': 'Pronto! Agora só falta escolher o plano. Escolha uma das opções a seguir:'},
             {'image': 'https://github.com/TerciodaSilva/rasa_contel_bot/blob/main/folder.jpeg?raw=true'},
             {'response': 'utter_plano'}
         ]
@@ -700,14 +701,15 @@ class ValidatePedirDados(FormValidationAction):
         """
         slot_result = {'nome_rua': None, 'repeticao': int(tracker.get_slot('repeticao'))}
         slot_result['repeticao'] += 1
-        slot_result['nome_rua'] = slot_value
 
         # verifica se o último caracter da frase é um digíto.
-        if slot_value[-1].isnumeric():
+        if slot_value[-1].isnumeric() and not all(x.isdigit() for x in slot_value):
             result = re.search('([\w\W]+)\s(\d+)', slot_value)  # separa o nome da rua e o número do endereço.
             slot_result['nome_rua'] = result.group(1)
             slot_result['numero_endereco'] = result.group(2)
             slot_result['repeticao'] = 0
+        elif not all(x.isdigit() for x in slot_value):
+            slot_result['nome_rua'] = slot_value
 
         return slot_result
 
@@ -724,8 +726,20 @@ class ValidatePedirDados(FormValidationAction):
         """
         Válida o e-mail informado pelo usuário.
         """
+        slot_return = {'valor_email': None, 'repeticao': int(tracker.get_slot('repeticao'))}
+        slot_return['repeticao'] += 1
 
-        return {'valor_email': slot_value, 'repeticao': 0}
+        try:
+            slot_value = slot_value.strip()
+        except TypeError:
+            return slot_return
+
+        if len(slot_value.split(' ')) == 1:
+            if '.' in slot_value and '@' in slot_value:
+                slot_return['valor_email'] = slot_value
+                slot_return['repeticao'] = 0
+
+        return slot_return
 
     def validate_numero_celular(self, slot_value: Any, dispatcher: CollectingDispatcher,
                                 tracker: Tracker, domain: DomainDict, ) -> Dict[Text, Any]:
@@ -737,9 +751,19 @@ class ValidatePedirDados(FormValidationAction):
                        'repeticao': int(tracker.get_slot('repeticao'))}  # dicionário que será retornado.
         slot_return['repeticao'] += 1
 
-        # verifica se o valor informado são digítos.
-        if slot_value.isnumeric():
-            slot_return['numero_celular'] = slot_value  # armazena a informação digítada.
+        slot_value = slot_value.strip()
+        DDD = tracker.get_slot('DDD')
+
+        valor = re.findall(r'\d+', slot_value)
+        valor = str.join('', valor)
+
+        tamanho_num = len(valor)
+
+        if tamanho_num == 11:
+            slot_return['numero_celular'] = valor  # armazena a informação digítada.
+            slot_return['repeticao'] = 0  # zera o número de repetição do slot.
+        elif tamanho_num == 9:
+            slot_return['numero_celular'] = DDD + valor  # armazena a informação digítada.
             slot_return['repeticao'] = 0  # zera o número de repetição do slot.
 
         return slot_return
@@ -767,6 +791,18 @@ class ValidatePedirDados(FormValidationAction):
         """
 
         return {'razao_social': slot_value, 'repeticao': 0}
+
+    def validate_plano(self, slot_value: Any, dispatcher: CollectingDispatcher,
+                       tracker: Tracker, domain: DomainDict, ) -> Dict[Text, Any]:
+
+        slot_return = {'plano': None, 'repeticao': int(tracker.get_slot('repeticao'))}
+        slot_return['repeticao'] += 1
+
+        if slot_value in [str(i) for i in range(1, 5)]:
+            slot_return['plano'] = slot_value
+            slot_return['repeticao'] = 0
+
+        return slot_return
 
 
 def open_database(func):

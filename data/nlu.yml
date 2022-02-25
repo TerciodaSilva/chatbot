@@ -50,3 +50,10 @@ nlu:
 - intent: email
   examples: |
     - dfsfjn2133@gmail.com
+
+- intent: adeus
+  examples: |
+    - tchau
+    - adeus
+    - até mais
+    - até logo

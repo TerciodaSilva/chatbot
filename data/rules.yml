@@ -54,16 +54,19 @@ rules:
 # regra que direciona o usuário para um atendente humano.
   steps:
   - intent: atendente_humano
-# desativa o formulário ativo
-  - action: action_deactivate_loop
-  - active_loop: null
 # ação que direciona o usuário para o atendente
   - action: action_direcionado_atendente_humano
+  - active_loop: null
 
 - rule: Agradecer usuário
 # regra para agradecer o atendimento
   steps:
   - intent: agradecimento
   - action: utter_agradecer
+
+- rule: Adeus para o usuário
+  steps:
+  - intent: adeus
+  - action: utter_adeus
 
 ##################### FIM DE ARQUIVO #####################
