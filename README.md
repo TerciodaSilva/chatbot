@@ -31,7 +31,8 @@ pip3 install -U --user pip && pip3 install rasa
 ### Mais informações
 | recurso | link |
 |---------|------|
-| rasa | https://rasa.com/docs/rasa/installation/
+| Rasa | https://rasa.com/docs/rasa/installation/ |
+| Comunidade Rasa Stack Brasil | https://t.me/RasaBrasil |
 
 ### 🛠 Tecnologias
  As seguintes ferramentas foram utilizadas no construção do projeto.
