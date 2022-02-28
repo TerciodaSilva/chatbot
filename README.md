@@ -4,7 +4,7 @@ Documentação de instalação do chatbot CONTEL.
 
 Esse trabalho está vinculado ao projeto de pesquisa em parceria da CONTEL com a UNISC que tem como propósito o desenvolvimento de um piloto de chatbot para atendimento ao cliente, no processo que envolva ativação de chip.
 
-![alt text](https://github.com/TerciodaSilva/rasa_contel_bot/blob/c269eb6f3b5524df689c959edcee70504639d3a0/Captura%20de%20tela%202022-02-22%20152347.png)
+![alt text](https://github.com/TerciodaSilva/rasa_contel_bot/blob/461277423c29dcd9511645044cbe25078cfa595b/Captura%20de%20tela%202022-02-22%20152347.png)
 
 # Como instalar
 > Faça o clone desse projeto.
