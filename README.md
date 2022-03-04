@@ -23,6 +23,10 @@ python3 -m venv ./venv
 ```sh
 .\venv\Scripts\activate
 ```
+>Primeiro, certifique-se de que sua versão do pip esteja atualizada:
+```sh
+pip3 install -U pip
+```
 >Instale o Rasa Open Source usando pip (requer Python 3.7 ou 3.8).
 ```sh
 pip3 install rasa
