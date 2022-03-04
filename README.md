@@ -25,7 +25,7 @@ python3 -m venv ./venv
 ```
 >Instale o Rasa Open Source usando pip (requer Python 3.7 ou 3.8).
 ```sh
-pip3 install -U --user pip && pip3 install rasa
+pip3 install rasa
 ```
 
 ### Mais informações
