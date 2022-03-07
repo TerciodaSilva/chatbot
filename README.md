@@ -7,7 +7,7 @@ Esse trabalho está vinculado ao projeto de pesquisa em parceria da CONTEL com a
 ![alt text](https://github.com/TerciodaSilva/rasa_contel_bot/blob/461277423c29dcd9511645044cbe25078cfa595b/Captura%20de%20tela%202022-02-22%20152347.png)
 
 # Como instalar
-> Faça o clone desse projeto.
+> Abra um terminal e faça o clone desse projeto.
 ```sh
 git clone https://github.com/TerciodaSilva/chatbot.git
 ```
@@ -44,8 +44,8 @@ pip3 install rasa
 - [rasa](https://rasa.com/)
 
 # Como usar o chatbot
-Para usar o chatbot é necessário que todos os passos anteriores de instalção tenham sido realizados.
-> Primeiro é necessário executar a parte lógica do chatbot.
+Para usar o chatbot é necessário que todos os passos anteriores de instalação tenham sido realizados.
+> Primeiro é necessário executar o servidor do chatbot.
 ```sh
 rasa run actions
 ```
