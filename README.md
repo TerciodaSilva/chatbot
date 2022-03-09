@@ -17,7 +17,7 @@ cd chatbot
 ```
 > Crie um novo ambiente virtual escolhendo um interpretador Python e criando um diretório .\\venv para mantê-lo:
 ```sh
-python3 -m venv ./venv
+python -m venv ./venv
 ```
 >Ative o ambiente virtual:
 ```sh
